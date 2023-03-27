@@ -11,7 +11,6 @@ public class Car {
     public Car() {
         this.model = "";
         this.manufacturer = "";
-        this.color = "";
         this.fuelType = "";
         this.doorsNumber = 0;
     }
