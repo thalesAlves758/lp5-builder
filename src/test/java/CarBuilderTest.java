@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -66,5 +65,18 @@ public class CarBuilderTest {
         } catch (IllegalArgumentException e) {
             assertEquals("Number of doors is invalid", e.getMessage());
         }
+    }
+
+    @Test
+    void shouldReturnValidCar() {
+        CarBuilder carBuilder = new CarBuilder();
+        Car car = carBuilder
+                .setModel("Supra")
+                .setManufacturer("Toyota")
+                .setFuelType("gasoline")
+                .setDoorsNumber(2)
+                .build();
+
+        assertNotNull(car);
     }
 }
