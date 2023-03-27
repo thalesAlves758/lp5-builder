@@ -35,4 +35,20 @@ public class CarBuilderTest {
             assertEquals("Manufacturer is invalid", e.getMessage());
         }
     }
+
+    @Test
+    void shouldThrowInvalidFuelTypeException() {
+        try {
+            CarBuilder carBuilder = new CarBuilder();
+            Car car = carBuilder
+                    .setModel("Supra")
+                    .setManufacturer("Toyota")
+                    .setDoorsNumber(2)
+                    .build();
+
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertEquals("Fuel type is invalid", e.getMessage());
+        }
+    }
 }
