@@ -19,4 +19,20 @@ public class CarBuilderTest {
             assertEquals("Model is invalid", e.getMessage());
         }
     }
+
+    @Test
+    void shouldThrowInvalidManufacturerException() {
+        try {
+            CarBuilder carBuilder = new CarBuilder();
+            Car car = carBuilder
+                    .setModel("Supra")
+                    .setFuelType("gasoline")
+                    .setDoorsNumber(2)
+                    .build();
+
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertEquals("Manufacturer is invalid", e.getMessage());
+        }
+    }
 }
