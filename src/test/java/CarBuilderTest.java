@@ -51,4 +51,20 @@ public class CarBuilderTest {
             assertEquals("Fuel type is invalid", e.getMessage());
         }
     }
+
+    @Test
+    void shouldThrowInvalidDoorsNumberException() {
+        try {
+            CarBuilder carBuilder = new CarBuilder();
+            Car car = carBuilder
+                    .setModel("Supra")
+                    .setManufacturer("Toyota")
+                    .setFuelType("gasoline")
+                    .build();
+
+            fail();
+        } catch (IllegalArgumentException e) {
+            assertEquals("Number of doors is invalid", e.getMessage());
+        }
+    }
 }
